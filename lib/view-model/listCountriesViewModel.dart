@@ -68,6 +68,6 @@ class ListCountryViewModel {
   double rad2deg(double rad) => rad / pi * 180.0;
 
 
-// 45.51086926014525, 12.234355297662331 Metide srl
+// 45.51086926014525, = Metide srl
 
 }

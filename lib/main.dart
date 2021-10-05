@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
+import 'package:path_provider/path_provider.dart';
 import 'package:untitled2/views/HomeScreen.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  final applicationDocumentDir = await getApplicationDocumentsDirectory();
+  await Hive.initFlutter(applicationDocumentDir.path);
+  await Hive.openBox("noteBox");
   runApp(const MyApp());
 }
 
